@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.turbo/
+.vitest-cache/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+coverage/
+.tsbuildinfo
+*.tsbuildinfo
