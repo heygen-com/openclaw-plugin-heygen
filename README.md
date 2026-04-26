@@ -1,6 +1,6 @@
-# @heygen/openclaw-plugin-heygen
+# openclaw-plugin-heygen
 
-[![npm version](https://img.shields.io/npm/v/@heygen/openclaw-plugin-heygen.svg)](https://www.npmjs.com/package/@heygen/openclaw-plugin-heygen)
+[![ClawHub](https://img.shields.io/badge/ClawHub-openclaw--plugin--heygen-blue)](https://clawhub.ai/kenchung/openclaw-plugin-heygen)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
 Adds [HeyGen](https://www.heygen.com) as a first-class provider for OpenClaw's built-in `video_generate` tool. Every agent that already uses `video_generate` (Google Veo, Runway, Kling, Wan, MiniMax, etc.) can now generate identity-preserving avatar videos through the same interface.
@@ -23,14 +23,8 @@ Pick HeyGen when the video needs a **recognizable human presenter**: explainer v
 ## Install
 
 ```bash
-# From ClawHub (recommended)
-openclaw plugins install clawhub:@heygen/openclaw-plugin-heygen
-
-# Or from npm
-openclaw plugins install @heygen/openclaw-plugin-heygen
+openclaw plugins install openclaw-plugin-heygen
 ```
-
-OpenClaw tries ClawHub first and falls back to npm automatically, so the bare spec works either way.
 
 Restart the gateway after installing:
 

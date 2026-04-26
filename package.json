@@ -1,5 +1,5 @@
 {
-  "name": "@heygen/openclaw-plugin-heygen",
+  "name": "openclaw-plugin-heygen",
   "version": "0.1.0",
   "description": "HeyGen Video Agent provider plugin for OpenClaw — first-class avatar/presenter video generation via OpenClaw's video_generate tool.",
   "type": "module",
