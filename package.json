@@ -1,6 +1,6 @@
 {
   "name": "openclaw-plugin-heygen",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "HeyGen Video Agent provider plugin for OpenClaw — first-class avatar/presenter video generation via OpenClaw's video_generate tool.",
   "type": "module",
   "license": "MIT",
@@ -48,7 +48,9 @@
     }
   },
   "openclaw": {
-    "extensions": ["./index.ts"],
+    "extensions": [
+      "./index.ts"
+    ],
     "compat": {
       "pluginApi": ">=2026.3.24-beta.2",
       "minGatewayVersion": "2026.3.24-beta.2"
