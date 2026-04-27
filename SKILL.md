@@ -14,7 +14,7 @@ description: |
   video, talking-head AI video, scripted avatar narration, brand spokesperson video.
   NOT for: cinematic b-roll (use Veo / Runway / Kling), video translation, TTS-only,
   streaming avatars, or photo-to-talking-head v2 pipelines.
-version: 0.1.0
+version: 0.1.2
 homepage: https://github.com/heygen-com/openclaw-plugin-heygen
 license: MIT
 metadata:
