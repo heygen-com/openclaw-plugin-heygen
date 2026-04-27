@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "node",
+  "packages": {
+    ".": {
+      "package-name": "openclaw-plugin-heygen",
+      "changelog-path": "CHANGELOG.md",
+      "extra-files": [
+        {
+          "type": "generic",
+          "path": "SKILL.md"
+        },
+        {
+          "type": "generic",
+          "path": "video-generation-provider.ts"
+        }
+      ]
+    }
+  },
+  "bump-minor-pre-major": false,
+  "bump-patch-for-minor-pre-major": false,
+  "include-component-in-tag": false,
+  "tag-separator": "",
+  "pull-request-title-pattern": "chore: release ${version}",
+  "pull-request-header": "Release PR — bumps package.json, SKILL.md frontmatter, and User-Agent constant from conventional commits since last release."
+}

@@ -36,7 +36,7 @@ const MAX_POLL_ATTEMPTS = 240;
 const THINKING_FAST_FAIL_POLLS = 8;
 const MAX_DURATION_SECONDS = 300;
 const MAX_FILE_ATTACHMENTS = 20;
-const HEYGEN_PROVIDER_VERSION = "0.1.2";
+const HEYGEN_PROVIDER_VERSION = "0.1.2"; // x-release-please-version
 const HEYGEN_USER_AGENT = `OpenClaw-HeyGen-Provider/${HEYGEN_PROVIDER_VERSION}`;
 const HEYGEN_PARTNER_SOURCE = "openclaw-plugin";
 
