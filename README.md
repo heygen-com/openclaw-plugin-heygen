@@ -22,13 +22,18 @@ Pick HeyGen when the video needs a **recognizable human presenter**: explainer v
 
 ## Install
 
-```bash
-openclaw plugins install openclaw-plugin-heygen
+**Paste this into your OpenClaw agent.** It does the rest — installs the plugin, asks for your HeyGen API key, runs a verify test, and ends with a working video.
+
+```
+Read https://raw.githubusercontent.com/heygen-com/openclaw-plugin-heygen/main/INSTALL_FOR_AGENTS.md and follow it. Ask me for any API keys you need.
 ```
 
-Restart the gateway after installing:
+That's it. The agent fetches [INSTALL_FOR_AGENTS.md](./INSTALL_FOR_AGENTS.md) and walks the rest of the install. Same prompt forever — the install spec lives in the repo, not in your clipboard.
+
+Want to install manually? The short version:
 
 ```bash
+openclaw plugins install openclaw-plugin-heygen
 openclaw gateway restart
 ```
 
