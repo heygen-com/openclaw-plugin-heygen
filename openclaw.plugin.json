@@ -1,5 +1,6 @@
 {
   "id": "heygen",
+  "icon": "https://avatars.githubusercontent.com/u/65394575?v=4",
   "enabledByDefault": true,
   "providerAuthEnvVars": {
     "heygen": ["HEYGEN_API_KEY"]
