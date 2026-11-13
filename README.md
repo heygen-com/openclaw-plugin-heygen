@@ -3,7 +3,12 @@
 [![ClawHub](https://img.shields.io/badge/ClawHub-openclaw--plugin--heygen-blue)](https://clawhub.ai/kenchung/openclaw-plugin-heygen)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
-Adds [HeyGen](https://www.heygen.com) as a first-class provider for OpenClaw's built-in `video_generate` tool. Every agent that already uses `video_generate` (Google Veo, Runway, Kling, Wan, MiniMax, etc.) can now generate identity-preserving avatar videos through the same interface.
+Adds [HeyGen](https://www.heygen.com) to OpenClaw in two places:
+
+- **Video:** a first-class provider for the built-in `video_generate` tool. Every agent that already uses `video_generate` (Google Veo, Runway, Kling, Wan, MiniMax, etc.) can now generate identity-preserving avatar videos through the same interface.
+- **Voice:** [HeyGen Voice](./docs/heygen-voice.md) as a text-to-speech provider (`tts.provider: "heygen"`), including your workspace's own voice clones.
+
+Requires OpenClaw 2026.9.2 or later.
 
 This is the official HeyGen plugin, maintained by HeyGen. It is published as an external OpenClaw plugin per the [OpenClaw VISION.md](https://github.com/openclaw/openclaw/blob/main/VISION.md) guidance ("If you build a plugin, host and maintain it in your own repository").
 
@@ -125,16 +130,37 @@ HeyGen-specific options passed via `providerOptions`:
 
 See the [HeyGen Video Agent API docs](https://developers.heygen.com/reference/list-video-agent-sessions.md) for full parameter coverage and the bundled [`docs/heygen.md`](./docs/heygen.md) for additional setup notes.
 
+## HeyGen Voice (text-to-speech)
+
+Make HeyGen Voice the speech provider:
+
+```bash
+openclaw config set tts.provider heygen
+openclaw config set tts.providers.heygen.speakerVoiceId "83548de556df48ba8c09c42a57c51d85"
+openclaw infer tts convert --local --provider heygen --text "Hello from OpenClaw." --output hello.mp3
+```
+
+`openclaw infer tts voices --provider heygen` lists your workspace voices (including instant and professional clones) and the public voices. Models, directives, output formats and cloning are in [`docs/heygen-voice.md`](./docs/heygen-voice.md).
+
 ## Testing
 
 ```bash
 npm install
 npm test
+npm run build   # dist/ is what OpenClaw loads from an installed package
 ```
 
-The unit tests in `video-generation-provider.test.ts` cover request shaping, polling, attachment forwarding, and error surfacing.
+`speech-provider.test.ts` runs against the real OpenClaw plugin SDK with HTTP mocked, and needs Node 24 (the SDK's own engine floor).
 
-> Note: `plugin-registration.contract.test.ts` is the OpenClaw plugin-registration contract test. It depends on harnesses from the OpenClaw monorepo (`test/helpers/plugins/plugin-registration-contract.js`) and runs as part of OpenClaw's CI when this plugin is loaded — it is intentionally not runnable standalone in this repo.
+To check the package the way users install it:
+
+```bash
+npm pack --pack-destination /tmp
+openclaw plugins install npm-pack:/tmp/openclaw-plugin-heygen-<version>.tgz --force --accept-capabilities
+openclaw plugins inspect heygen --runtime --json
+```
+
+> Note: `video-generation-provider.test.ts` and `plugin-registration.contract.test.ts` came from the OpenClaw monorepo. They depend on its test harnesses (`test/helpers/...`), so `vitest.config.ts` excludes them here.
 
 ## Support
 

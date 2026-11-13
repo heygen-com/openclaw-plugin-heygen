@@ -1,10 +1,11 @@
 ---
 name: openclaw-plugin-heygen
-display_name: HeyGen Video Agent
+display_name: HeyGen Video Agent and Voice
 description: |
   Official HeyGen plugin for OpenClaw — adds HeyGen as a first-class provider for the
-  built-in video_generate tool. Identity-first avatar videos: pick an avatar_id, a voice,
-  a script, and get an on-brand presenter video back.
+  built-in video_generate tool, and HeyGen Voice as a text-to-speech provider.
+  Identity-first avatar videos: pick an avatar_id, a voice, a script, and get an
+  on-brand presenter video back.
   Use when: (1) generating a video where a specific avatar/person speaks specific lines,
   (2) "make a video of me / our brand presenter", (3) outreach, announcements, pitch decks,
   product walkthroughs, or any presenter-led video, (4) needing landscape or portrait output
@@ -12,7 +13,8 @@ description: |
   standard provider interface (no bespoke REST glue required).
   Covers: HeyGen v3 Video Agent (api.heygen.com), avatar-presenter video, identity-preserving
   video, talking-head AI video, scripted avatar narration, brand spokesperson video.
-  NOT for: cinematic b-roll (use Veo / Runway / Kling), video translation, TTS-only,
+  Also: HeyGen Voice text-to-speech (tts.provider "heygen"), workspace voice clones.
+  NOT for: cinematic b-roll (use Veo / Runway / Kling), video translation,
   streaming avatars, or photo-to-talking-head v2 pipelines.
 version: 0.1.2 # x-release-please-version
 homepage: https://github.com/heygen-com/openclaw-plugin-heygen
