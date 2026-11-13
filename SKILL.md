@@ -16,7 +16,7 @@ description: |
   Also: HeyGen Voice text-to-speech (tts.provider "heygen"), workspace voice clones.
   NOT for: cinematic b-roll (use Veo / Runway / Kling), video translation,
   streaming avatars, or photo-to-talking-head v2 pipelines.
-version: 0.1.2 # x-release-please-version
+version: 0.2.0 # x-release-please-version
 homepage: https://github.com/heygen-com/openclaw-plugin-heygen
 license: MIT
 metadata:
