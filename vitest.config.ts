@@ -15,7 +15,7 @@ import { defineConfig } from "vitest/config";
 // be re-vendored or replaced with stubs; tracked in a follow-up.
 export default defineConfig({
   test: {
-    include: ["src/**/*.test.ts"],
+    include: ["*.test.ts", "src/**/*.test.ts"],
     exclude: [
       "node_modules/**",
       "dist/**",

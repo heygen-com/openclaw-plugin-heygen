@@ -20,7 +20,8 @@
     }
   ],
   "contracts": {
-    "videoGenerationProviders": ["heygen"]
+    "videoGenerationProviders": ["heygen"],
+    "speechProviders": ["heygen"]
   },
   "configSchema": {
     "type": "object",

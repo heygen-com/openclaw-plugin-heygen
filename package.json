@@ -1,7 +1,7 @@
 {
   "name": "openclaw-plugin-heygen",
   "version": "0.1.2",
-  "description": "HeyGen Video Agent provider plugin for OpenClaw — first-class avatar/presenter video generation via OpenClaw's video_generate tool.",
+  "description": "HeyGen provider plugin for OpenClaw — avatar/presenter video through the video_generate tool and HeyGen Voice text-to-speech.",
   "type": "module",
   "license": "MIT",
   "author": "HeyGen <support@heygen.com>",
@@ -21,26 +21,37 @@
     "avatar",
     "video-agent",
     "ai-video",
-    "video-generation"
+    "video-generation",
+    "voice",
+    "tts",
+    "text-to-speech",
+    "speech"
   ],
   "files": [
     "index.ts",
     "video-generation-provider.ts",
+    "speech-provider.ts",
+    "tts.ts",
+    "dist",
     "openclaw.plugin.json",
     "docs",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
+    "build": "esbuild index.ts video-generation-provider.ts speech-provider.ts tts.ts --outdir=dist --format=esm --platform=node --target=node22",
+    "prepack": "npm run build",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "esbuild": "^0.25.12",
+    "openclaw": "^2026.11.3",
     "typescript": "^5.6.0",
     "vitest": "^2.1.0"
   },
   "peerDependencies": {
-    "openclaw": ">=2026.3.24-beta.2"
+    "openclaw": ">=2026.9.2"
   },
   "peerDependenciesMeta": {
     "openclaw": {
@@ -49,13 +60,14 @@
   },
   "openclaw": {
     "extensions": ["./index.ts"],
+    "runtimeExtensions": ["./dist/index.js"],
     "compat": {
-      "pluginApi": ">=2026.3.24-beta.2",
-      "minGatewayVersion": "2026.3.24-beta.2"
+      "pluginApi": ">=2026.9.2",
+      "minGatewayVersion": "2026.9.2"
     },
     "build": {
-      "openclawVersion": "2026.4.22",
-      "pluginSdkVersion": "2026.4.22"
+      "openclawVersion": "2026.11.3",
+      "pluginSdkVersion": "2026.11.3"
     }
   }
 }

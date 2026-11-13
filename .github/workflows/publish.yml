@@ -16,6 +16,11 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Build
+        run: |
+          npm ci --ignore-scripts
+          npm run build
+
       - name: Install ClawHub CLI
         run: npm install -g clawhub
 
@@ -38,5 +43,5 @@ jobs:
           clawhub publish . \
             --slug openclaw-plugin-heygen \
             --version ${{ steps.version.outputs.version }} \
-            --name "HeyGen Video Agent" \
+            --name "HeyGen Video Agent and Voice" \
             --changelog "$CHANGELOG"
