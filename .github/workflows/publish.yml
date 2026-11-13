@@ -16,6 +16,11 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Build
+        run: |
+          npm ci --ignore-scripts
+          npm run build
+
       - name: Install ClawHub CLI
         run: npm install -g clawhub
 
