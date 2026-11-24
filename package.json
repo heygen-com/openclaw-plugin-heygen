@@ -48,7 +48,7 @@
     "esbuild": "^0.25.12",
     "openclaw": "^2026.11.3",
     "typescript": "^5.6.0",
-    "vitest": "^2.1.0"
+    "vitest": "^4.1.11"
   },
   "peerDependencies": {
     "openclaw": ">=2026.9.2"
