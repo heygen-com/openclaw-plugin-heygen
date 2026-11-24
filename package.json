@@ -1,6 +1,6 @@
 {
   "name": "openclaw-plugin-heygen",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "HeyGen provider plugin for OpenClaw — avatar/presenter video through the video_generate tool and HeyGen Voice text-to-speech.",
   "type": "module",
   "license": "MIT",
@@ -59,8 +59,12 @@
     }
   },
   "openclaw": {
-    "extensions": ["./index.ts"],
-    "runtimeExtensions": ["./dist/index.js"],
+    "extensions": [
+      "./index.ts"
+    ],
+    "runtimeExtensions": [
+      "./dist/index.js"
+    ],
     "compat": {
       "pluginApi": ">=2026.9.2",
       "minGatewayVersion": "2026.9.2"
